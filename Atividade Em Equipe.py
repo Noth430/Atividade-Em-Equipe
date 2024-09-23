@@ -23,7 +23,8 @@ QTD= 5
 lista=[]
 
 for i in range (QTD):
-    num=random.randint(-5,5)
+    num = int(input(f"Digite um {i+1}º: "))
+    #num=random.randint(-5,5)
     lista.append(num)
 
 def impar_par(a):
@@ -49,23 +50,23 @@ def positivo_negativo(a):
         
 def media_impar(a):
     QNTD = len(a)
-    soma = sum(a)
-    for numero in a:
-        if (numero >= 0) or (numero<=0):
-                media = soma/QNTD
-                return media 
-        else:
-            return 0
-
+    if QNTD!=0:
+        soma = sum(a)
+        media = soma/QNTD
+        return media 
+    else:
+        return 0
+        
 def media_par(a):
     QNTD = len(a)
-    soma = sum(a)
-    for numero in a:
-        if (numero >= 0) or (numero<=0):
-            media = soma/QNTD
-            return media 
-        else:
-            return 0
+    if QNTD!=0:
+        soma = sum(a)
+        media = soma/QNTD
+        return media 
+    else:
+        return 0
+
+
 lista_atualizada_positivo, lista_atualizada_negativo = positivo_negativo(lista)
 lista_atualizada_par, lista_atualizada_impar = impar_par(lista)
 
